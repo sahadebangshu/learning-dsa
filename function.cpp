@@ -6,9 +6,9 @@ int init(int a[], int n) {
         cin >> a[i];
     return 0;
 }
-void display(int a[], int n){
+void dis(int a[],int n){
     for(int i=0;i<n;i++)
-        cout << a[i];
+        cout << a[i] << "  ";
     cout << endl;
 }
 void insert(int a[],int n,int pos,int data){
@@ -17,7 +17,7 @@ void insert(int a[],int n,int pos,int data){
     a[pos-1] = data;
 }
 void del(int a[],int n,int pos){
-    for(int i=pos-1;i<=n-1;i++)
+    for(int i=pos-1;i<n-1;i++)
         a[i] = a[i+1];
 }
 int main() {
@@ -35,20 +35,34 @@ int main() {
                 init(a,n);
                 break;
             case 2:
-                cout << "after insertion : ";
-                display(a,n);
+                if(n==0) {
+                    cout << "empty" << endl;
+                } else {
+                    cout << "after insertion : ";
+                    dis(a,n);
+                }
                 break;
             case 3:
                 cout << "enter the position : ";
                 cin >> pos;
                 cout << "enter data : ";
                 cin >> data;
-                insert(a,n,pos,data);
+                if(pos>=1 && pos<=n){
+                    insert(a,n,pos,data);
+                    n++;
+                } else {
+                    cout << "Invalid!!" << endl;
+                }
                 break;
             case 4:
                 cout << "enter position : ";
                 cin >> pos;
-                del(a,n,pos);
+                if(pos>=1 && pos<=n){
+                    del(a,n,pos);
+                    n--;
+                } else {
+                    cout << "Invalid!!" << endl;
+                }
                 break;
             default:
                 cout << "Wrong Choice" << endl;

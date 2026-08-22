@@ -34,7 +34,7 @@ int main() {
     //delete a data from the array
     printf("enter the position : ");
     scanf("%d", &pos);
-    for(i=pos-1;i<=n;i++)
+    for(i=pos-1;i<n-1;i++)
         a[i] = a[i+1];
     for(i=0;i<n;i++)
         printf("%d\t", a[i]);
