@@ -2,6 +2,7 @@
 #include<cstdlib>
 using namespace std;
 int main() {
+    //we can do by using function.
     int a[100],n;
     while(1){
         cout << "Enter the no of elements : ";
